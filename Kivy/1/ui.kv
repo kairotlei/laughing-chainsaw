@@ -1,0 +1,16 @@
+Screen:
+    
+    MDFloatLayout:
+        orientation: "horizontal"
+        
+        MDLabel:
+            id: hi_text
+            text: "Hi!"
+            font_size: 100
+            pos: 0,0
+            
+        MDTextButton:
+            text: "Press me!"
+            font_size: 15
+            on_press: hi_text.text = "Botón pulsado!"
+            pos: 100, 0

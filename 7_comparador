@@ -1,0 +1,7 @@
+nr = 7
+
+if nr >= 5:
+    print("número mayor que 5")
+else:
+    
+    print("es menos que 5")

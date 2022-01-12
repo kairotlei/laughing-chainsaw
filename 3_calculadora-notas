@@ -1,0 +1,8 @@
+
+
+nota_examen = float(input("Nota de examen: "))
+nota_msim = float(input("Nota de MultiSim: "))
+
+nota_final = float((nota_examen*0.55) + (nota_msim*0.45))
+
+print("Tu nota final es: " + str(nota_final))
