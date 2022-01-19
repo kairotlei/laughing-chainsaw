@@ -1,0 +1,85 @@
+Screen:
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        # barra opciones
+        MDToolbar:
+            title: " Gestor de usuarios"
+            elevation: 10
+            right_action_items: [["exit-to-app", lambda x: app.exit(), "Cerrar"]]
+            left_action_items: [["content-save-move", lambda x: app.save_data(user_name.text, user_surname.text, user_course.text, user_email.text, user_telegram.text), "Guardar"]]
+            
+            
+        MDFloatLayout:
+            orientation: "vertical"
+            
+            MDCard:
+                id: user_card
+                elevation: 20
+                size_hint: .9, .9
+                pos_hint: {"center_x":.5, "center_y":.5,}
+                #ripple_behavior: True
+                
+                MDGridLayout:
+                    cols: 2
+                    
+                    MDFloatLayout:
+                        orientation: "vertical"
+                        spacing: 25
+                    
+                            
+                        MDTextField:
+                            id: user_name
+                            hint_text: "Nombre"
+                            icon_right: "account"
+                            font_size: 23
+                            multiline: False
+                            on_text_validate: user_surname.focus = True
+                            pos_hint: {"center_x":.5, "center_y":.7}
+                            size_hint: .75, .13
+                            
+                        MDTextField:
+                            id: user_surname
+                            hint_text: "Apellidos"
+                            icon_right: "account"
+                            font_size: 23
+                            multiline: False
+                            on_text_validate: user_course.focus = True
+                            pos_hint: {"center_x":.5, "center_y":.6}
+                            size_hint: .75, .13
+                            
+                        MDTextField:
+                            id: user_course
+                            hint_text: "Curso"
+                            icon_right: "school"
+                            font_size: 23
+                            multiline: False
+                            on_text_validate: user_email.focus = True
+                            pos_hint: {"center_x":.5, "center_y":.5}
+                            size_hint: .75, .13
+                            
+                        MDTextField:
+                            id: user_email
+                            hint_text: "Email"
+                            icon_right: "email"
+                            font_size: 23
+                            multiline: False
+                            on_text_validate: user_telegram.focus = True
+                            pos_hint: {"center_x":.5, "center_y":.4}
+                            size_hint: .75, .13
+                            
+                        MDTextField:
+                            id: user_telegram
+                            hint_text: "Telegram"
+                            icon_right: "telegram"
+                            font_size: 23
+                            multiline: False
+                            pos_hint: {"center_x":.5, "center_y":.3}
+                            size_hint: .75, .13
+                            on_text_validate: app.save_data(user_name.text, user_surname.text, user_course.text, user_email.text, user_telegram.text)
+                            
+                        
+                    MDBoxLayout:
+                        Image:
+                            source: "usr.png"
+                            size: .3, .3
